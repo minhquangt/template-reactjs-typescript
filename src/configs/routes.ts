@@ -8,23 +8,23 @@ export const privateRoutes = [
   {
     path: '/',
     element: Home,
-    layout: DefaultLayout,
+    layout: DefaultLayout
   },
   {
     path: '/users',
     element: Users,
-    layout: DefaultLayout,
-  },
+    layout: DefaultLayout
+  }
 ];
 export const publicRoutes = [
   {
     path: '/login',
     element: Login,
-    layout: null,
+    layout: null
   },
   {
     path: '*',
     element: NotFound,
-    layout: null,
-  },
+    layout: null
+  }
 ];

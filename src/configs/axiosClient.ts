@@ -3,7 +3,7 @@ import { getRefreshToken } from 'src/utils/getToken';
 import setAxiosHeader from 'src/utils/setAxiosHeader';
 
 const axiosClient = axios.create({
-  baseURL: '',
+  baseURL: ''
 });
 
 axiosClient.interceptors.request.use(
@@ -36,18 +36,15 @@ axiosClient.interceptors.response.use(
               method: 'POST',
               url: `api/v1/auth/refreshtoken`,
               headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
               },
               data: {
-                refreshToken: refreshToken,
-              },
+                refreshToken: refreshToken
+              }
             })
               .then(async (response) => {
                 localStorage.setItem('token', response?.data?.token);
-                localStorage.setItem(
-                  'refreshToken',
-                  response?.data?.refreshToken
-                );
+                localStorage.setItem('refreshToken', response?.data?.refreshToken);
                 return axiosClient(originalRequest);
               })
               .catch((errorRefresh) => {

@@ -10,5 +10,5 @@ export const authApi = {
   },
   login(data: RegisterData): Promise<ResponseForm<Profile>> {
     return axiosClient.post(`${endpoint}/login`, data);
-  },
+  }
 };
