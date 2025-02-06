@@ -34,11 +34,11 @@ export const userSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(loginUser.pending, (state, action) => {});
+    builder.addCase(loginUser.pending, () => {});
     builder.addCase(loginUser.fulfilled, (state, action: PayloadAction<any>) => {
       state.user = action.payload || initialState.user;
     });
-    builder.addCase(loginUser.rejected, (state, action) => {
+    builder.addCase(loginUser.rejected, (_, action) => {
       console.log(action.error.message);
     });
   }

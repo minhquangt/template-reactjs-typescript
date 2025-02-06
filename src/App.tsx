@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { privateRoutes, publicRoutes } from 'src/configs/routes';
 import PrivateRoutes from './components/PrivateRoute';
 import UnauthorizedRoutes from 'src/components/UnauthorizedRoutes';
+import './App.css';
 
 function App() {
   return (
