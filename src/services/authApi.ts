@@ -10,5 +10,11 @@ export const authApi = {
   },
   login(data: RegisterData): Promise<ResponseForm<Profile>> {
     return axiosClient.post(`${endpoint}/login`, data);
+  },
+  logout(): Promise<ResponseForm<Profile>> {
+    return axiosClient.post(`${endpoint}/logout`);
+  },
+  refreshToken(refreshToken: string): Promise<ResponseForm<{ accessToken: string }>> {
+    return axiosClient.post(`${endpoint}/refresh-token`, { refreshToken });
   }
 };

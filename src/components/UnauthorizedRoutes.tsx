@@ -1,12 +1,12 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-const PrivateRoutes = () => {
+const UnauthorizedRoutes = () => {
   const accessToken = localStorage.getItem('accessToken');
-  if (!accessToken) {
-    return <Navigate to='/login' replace={true} />;
+  if (accessToken) {
+    return <Navigate to='/' replace={true} />;
   }
 
   return <Outlet />;
 };
 
-export default PrivateRoutes;
+export default UnauthorizedRoutes;
