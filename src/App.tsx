@@ -4,6 +4,7 @@ import { privateRoutes, publicRoutes } from 'src/configs/routes';
 import PrivateRoutes from './components/PrivateRoute';
 import UnauthorizedRoutes from 'src/components/UnauthorizedRoutes';
 import './App.css';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
             );
           })}
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
